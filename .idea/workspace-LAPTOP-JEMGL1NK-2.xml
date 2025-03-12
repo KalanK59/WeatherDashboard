@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ceef9991-14e1-4fe3-b2c2-b0b54d9a9bae" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Pug File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2mGtHlkzzbOh1Jmq6leAqUAzhfa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.Contact_Us.html.executor": "Run",
+    "JavaScript Debug.Main.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Node.js.app.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "javascript.nodejs.core.library.configured.version": "20.17.0",
+    "javascript.nodejs.core.library.typings.version": "20.16.5",
+    "last_opened_file_path": "C:/Users/skaly/OneDrive - Saskatchewan Polytechnic/CWEB Projects/DominicBroleyKalanKalynkaCWEB280_Project1/public/javascript",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/skaly/AppData/Roaming/JetBrains/WebStorm2024.2/node/versions/20.18.0/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "ts.external.directory.path": "C:\\Users\\skaly\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\DominicBroleyKalanKalynkaCWEB280_Project1\public\javascript" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\DominicBroleyKalanKalynkaCWEB280_Project1" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\DominicBroleyKalanKalynkaCWEB280_Project1\routes" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\untitled2\public\img" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\untitled2\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\Trying\public\javascript" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\Trying\public" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\untitled2\public\img" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\untitled2\authors" />
+      <recent name="C:\Users\skaly\OneDrive - Saskatchewan Polytechnic\CWEB Projects\untitled2\public\html" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.Contact_Us.html">
+    <configuration name="Contact_Us.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/untitled2/public/html/Contact_Us.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Main.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/untitled2/views/Main.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/untitled2/views/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Contact_Us.html" />
+        <item itemvalue="JavaScript Debug.Main.html" />
+        <item itemvalue="Node.js.app.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ceef9991-14e1-4fe3-b2c2-b0b54d9a9bae" name="Changes" comment="" />
+      <created>1726714655219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726714655219</updated>
+      <workItem from="1726714656315" duration="1053000" />
+      <workItem from="1726716259565" duration="11847000" />
+      <workItem from="1726752671900" duration="857000" />
+      <workItem from="1726755402982" duration="5910000" />
+      <workItem from="1726777595162" duration="2990000" />
+      <workItem from="1726792139386" duration="7646000" />
+      <workItem from="1727119820018" duration="29000" />
+      <workItem from="1727135931994" duration="14619000" />
+      <workItem from="1727158065102" duration="1927000" />
+      <workItem from="1727187941279" duration="7367000" />
+      <workItem from="1727216218197" duration="17117000" />
+      <workItem from="1727233994702" duration="940000" />
+      <workItem from="1727234952290" duration="161000" />
+      <workItem from="1727235346349" duration="1000000" />
+      <workItem from="1727236642511" duration="1757000" />
+      <workItem from="1727274121752" duration="552000" />
+      <workItem from="1727292496008" duration="10000" />
+      <workItem from="1727293186601" duration="2819000" />
+      <workItem from="1727297798361" duration="102000" />
+      <workItem from="1727302992533" duration="12686000" />
+      <workItem from="1727360855198" duration="85000" />
+      <workItem from="1727360961806" duration="424000" />
+      <workItem from="1727374980915" duration="5422000" />
+      <workItem from="1727402294360" duration="4488000" />
+      <workItem from="1727555654719" duration="1437000" />
+      <workItem from="1727639323647" duration="6102000" />
+      <workItem from="1727645560861" duration="164000" />
+      <workItem from="1727646011092" duration="75000" />
+      <workItem from="1727646283892" duration="1621000" />
+      <workItem from="1727647934664" duration="4632000" />
+      <workItem from="1727660847332" duration="8672000" />
+      <workItem from="1727728231518" duration="11680000" />
+      <workItem from="1727792632673" duration="6492000" />
+      <workItem from="1727823652095" duration="5735000" />
+      <workItem from="1727831476979" duration="11507000" />
+      <workItem from="1727843201076" duration="368000" />
+      <workItem from="1727894641201" duration="6941000" />
+      <workItem from="1728171563650" duration="1246000" />
+      <workItem from="1728338646951" duration="10572000" />
+      <workItem from="1728352483715" duration="9000" />
+      <workItem from="1728357939599" duration="47000" />
+      <workItem from="1728500021476" duration="2247000" />
+      <workItem from="1728504471139" duration="2699000" />
+      <workItem from="1728507648646" duration="206000" />
+      <workItem from="1728507956699" duration="18000" />
+      <workItem from="1728669878032" duration="18000" />
+      <workItem from="1728669909218" duration="16000" />
+      <workItem from="1728852342596" duration="1066000" />
+      <workItem from="1729009275206" duration="1121000" />
+      <workItem from="1729107353567" duration="4345000" />
+      <workItem from="1729209273555" duration="4268000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

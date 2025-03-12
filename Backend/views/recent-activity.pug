@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        title Recent Activity
+        link(rel='stylesheet', href='/css/style.css')
+    body
+        h1 Recent Activity
+        ul
+            each activity in activities
+                li
+                    | #{activity.date} #{activity.time} - #{activity.action} (#{activity.url})

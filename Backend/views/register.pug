@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Registration Page
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    body
+        .container
+            .row.justify-content-center
+                .col-md-4
+                    .card.mt-5
+                        .card-body
+                            h3.text-center.mb-4 Register
+                            // To display the error message
+                            h4.text-center.mb-4(id="message")
+                            form(id="formRegister" action="/register" method="POST")
+                                .form-group
+                                    label(for="username") Username:
+                                    input.form-control(type="text" name="username" id="username" placeholder="Enter your username" )
+                                    .invalid-feedback Enter a username.
+                                .form-group
+                                    label(for="password") Password:
+                                    input.form-control(type="password" name="password" id="password" placeholder="Enter your password"  )
+                                    .invalid-feedback Enter a password.
+                                .form-group
+                                    label(for="accessLevel") Access Level:
+                                    select.form-control(name="accessLevel" id="accessLevel")
+                                        option(value="read") Read
+                                        option(value="write") Write
+                                        option(value="admin") Admin
+                                button.btn.btn-primary.btn-block(type="submit") Register
+                            a.btn.btn-link(href="/login") Already have an account? Log In
+    // References the JavaScript file of loginClientSide.
+    script(src="/js/registerClientSide.js")

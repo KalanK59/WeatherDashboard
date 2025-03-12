@@ -1,0 +1,88 @@
+/* Set height of html and body to 100% and remove default margin */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Wrapper for main content to allow flexible layout */
+.content-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer to stick to the bottom of the page */
+footer {
+    margin-top: auto;
+}
+
+/* Styles for carousel captions */
+.carousel-caption h5 {
+    color: white; / Ensure the text remains white
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Wrapper for carousel images */
+.carousel-image-wrapper {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Styles for carousel images */
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Margins for the specific sections */
+#temp-div, #weather-info, .table-responsive {
+    margin-bottom: 20px;
+}
+
+/* Margin for forms */
+form {
+    margin-bottom: 20px;
+}
+
+/* Margins for input elements, selects, and buttons */
+input, select, button {
+    margin: 5px;
+}
+
+/* Styles for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table, header, and cell borders */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Padding and text alignment for table headers and cells */
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Styles for hourly weather items */
+.hourly-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Margin for images within hourly items */
+.hourly-item img {
+    margin-right: 10px;
+}

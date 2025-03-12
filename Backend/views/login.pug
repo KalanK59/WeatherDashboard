@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Login Page
+        // Implements the CSS from Bootstrap.
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    body
+        // Formatting the form and using Bootstrap to have it laid out the same way as our proposal mock-ups.
+        .container
+            .row.justify-content-center
+                .col-md-4
+                    .card.mt-5
+                        .card-body
+                            h3.text-center.mb-4 Login
+                            // To display the error message
+                            h4.text-center.mb-4(id="message")
+
+                            // Used for the form which prompts the user to enter the username and password.
+                            form(id="formSubmit" action="/login" method="POST")
+                                .form-group
+                                    // Back to Vue link styled as a Bootstrap button
+                                    a.btn.btn-link(href="http://localhost:5173/" class="mt-2") Back to WeatherDashboard Page
+                                .form-group
+                                    label(for="username") Username:
+                                    div.form-group
+                                        //username displayed on the page for the user to fill out
+                                        input.form-control(type="text" name="username" id="username" placeholder="Enter your username" value=username)
+                                        .invalid-feedback Enter a name.
+                                .form-group
+                                    //Password displayed on the page for the user to fill out
+                                    label(for="password") Password:
+                                    input.form-control(type="password" name="password" id="password" placeholder="Enter your password" value=password)
+                                    .invalid-feedback Enter a password.
+                                .form-group
+                                    input(type="checkbox" name="remember" id="remember")
+                                    label(for="remember" class="ml-2") Remember Me
+                                button.btn.btn-primary.btn-block(id="btnSubmit" type="submit") Log In
+                                // Register button that links to the registration page
+                                a.btn.btn-secondary.btn-block.mt-3(href="/register") Register
+    // References the JavaScript file of loginClientSide.
+    script(src="/js/loginClientSide.js")

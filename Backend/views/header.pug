@@ -1,0 +1,27 @@
+// Header section of the page
+header.d-flex.justify-content-between.align-items-center.py-3
+    // Flex container for the logo and title
+    .d-flex.align-items-center
+        img(src="/image/logo.png", alt="Logo", style="width: 150px;")
+        // Main title of the dashboard
+        h1 Weather Dashboard
+
+    // Additional image element
+    img(src="/image/globe.png", alt="Globe", style="width: 150px;")
+
+    // Edit Profile and Delete Account buttons
+    .d-flex.align-items-center.gap-2
+        button(type="button", class="btn btn-secondary", data-bs-toggle="modal", data-bs-target="#userProfileModal") User Profile
+
+// Modals
+// Edit Profile Modal
+.modal.fade#userProfileModal(tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                h5.modal-title#userProfileModalLabel User Profile
+                button(type="button", class="btn-close", data-bs-dismiss="modal", aria-label="Close")
+            .modal-body
+                button(type="button", class="btn btn-secondary", onclick="window.location.href='/user/confirm'") User Profile Settings
+
+

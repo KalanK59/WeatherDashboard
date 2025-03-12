@@ -1,0 +1,105 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Manage Comments
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css", rel="stylesheet")
+    body
+        .container.mt-4
+            .d-flex.justify-content-between.align-items-center
+                h1 Manage Comments
+                a.btn.btn-primary(href='/weather') Return to Main Page
+            // Form to create a new comment
+            form(action="/weather/comments", method="post")
+                .mb-3
+                    label(for="commentText") New Comment:
+                    textarea#commentText(name="commentText", rows="3", class="form-control" required)
+                .mb-3
+                    button.btn.btn-primary(type="submit") Add Comment
+
+            // Display existing comments
+            h2 Existing Comments
+            ul.list-group
+                if comments.length
+                    each comment in comments
+                        li.list-group-item
+                            | #{comment.date} - #{comment.username}: #{comment.text}
+                            div(style="display: flex; align-items: center; gap: 10px;")
+                                a.btn.btn-warning(href=`/weather/comments/edit/${comment._id}`) Edit
+                                button.btn.btn-danger(type="button", onclick="deleteComment('${id}')") Delete
+
+                            // Button to trigger modal for reply
+                            button.btn.btn-primary(type="button", data-bs-toggle="modal", data-bs-target=`#replyModal-${comment._id}`) ↩ Reply
+
+
+                            // Display replies under the original comment
+                            ul.list-group
+                                each reply in comment.replies
+
+                                    li.list-group-item(style="margin-top: 10px; margin-bottom: 10px;")
+                                        a.btn.btn-warning(href=`/weather/comments/reply/edit/${reply._id}`) Edit
+                                        |  #{reply.date} - #{reply.username}: #{reply.text}
+
+                else
+                    li.list-group-item No comments available
+
+            // Modal for replying to a comment
+            each comment in comments
+                .modal.fade(id=`replyModal-${comment._id}`, tabindex="-1", aria-labelledby="replyModalLabel" aria-hidden="true")
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h5.modal-title(id="replyModalLabel") Replies to Comment by #{comment.username}
+                                button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                            .modal-body
+                                // Display existing replies
+                                h5 Existing Replies
+                                if comment.replies.length
+                                    ul.list-group
+                                        each reply in comment.replies
+                                            li.list-group-item
+                                                | #{reply.date} - #{reply.username}: #{reply.text}
+                                else
+                                    p.text-muted No replies yet.
+
+                                // Form to add a new reply
+                                hr
+                                h5 Add a Reply
+                                form(action=`/weather/comments/reply/${comment._id}`, method="post")
+                                    .mb-3
+                                        label(for="replyText") Your Reply:
+                                        textarea(name="replyText", rows="3", class="form-control" required)
+                                    .mb-3
+                                        button.btn.btn-primary(type="submit") Submit Reply
+                            .modal-footer
+                                button.btn.btn-secondary(type="button", data-bs-dismiss="modal") Close
+
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
+        script.
+
+            async function deleteComment(id) {
+                const confirmDelete = confirm('Are you sure you want to delete this comment?');
+                if (confirmDelete) {
+                    try {
+                        const response = await fetch(`/weather/comments/delete/#{id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${this.token}`
+                            }
+                        });
+                        const result = await response.json();
+                        if (response.ok) {
+                            alert(result.message);
+
+                            window.location.href = '/weather/comments'; // Redirect after successful deletion
+                        } else {
+                            alert(result.message || 'Error deleting user');
+                        }
+                    } catch (err) {
+                        alert('An error occurred: ' + err.message);
+                    }
+                }
+
+            }
+

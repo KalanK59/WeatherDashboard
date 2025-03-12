@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Edit Comment
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css", rel="stylesheet")
+    body
+        .container.mt-4
+            h1 Edit Reply
+            // Use both a form and JavaScript for flexibility
+            form#editCommentForm(onsubmit="updateReply('${id}'); return false;")
+                .mb-3
+                    label(for="replyText") Edit Your Comment:
+                    textarea#replyText(name="replyText", rows="3", class="form-control" required)= comment.text
+                .mb-3
+                    button.btn.btn-primary(type="submit") Update Reply
+            a.btn.btn-secondary(href="/weather/comments") Back to Comments
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
+
+        script.
+            async function updateReply(id) {
+                const newReply = document.getElementById("replyText").value; // Match textarea ID
+
+                const confirmUpdate = confirm('Are you sure you want to update your comment?');
+                if (confirmUpdate) {
+                    try {
+                        const response = await fetch(`/weather/comments/reply/#{id}`, {  // Correct URL interpolation
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({replyText: newReply}),
+                        });
+
+                        const result = await response.json();
+                        console.log("Response Status:", response.status);
+                        console.log("Response Body:", result);
+
+                        if (response.ok) {
+                            alert(result.message || 'Reply updated successfully!');
+                            window.location.href = '/weather/comments';
+                        } else {
+                            alert(result.message || 'Error updating comment');
+                        }
+                    } catch (err) {
+                        alert('An error occurred: ' + err.message);
+                    }
+                }
+            }

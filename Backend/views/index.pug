@@ -1,0 +1,200 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Weather Dashboard
+        //These are the styles that we are using which is bootstrap and custom.
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css", rel="stylesheet")
+        link(rel="stylesheet" href="/css/formLayout.css")
+        link(rel="stylesheet" type="text/css" href="/css/styles.css")
+
+
+        style.
+            /* Hide the invalid feedback message by default */
+            .invalid-feedback {
+                display: none;
+            }
+
+            /* When the form has been validated and the input is invalid,
+               display the invalid feedback message */
+            .was-validated .form-control:invalid ~ .invalid-feedback {
+                display: block;
+            }
+
+            /* Set html and body to take up the full height of the viewport */
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+
+            /* Ensure the content wrapper takes up the full height of the viewport,
+               and allow flexible layout for its child elements */
+            .content-wrapper {
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Set the footer to stick at the bottom of the page */
+            footer {
+                margin-top: auto;
+            }
+
+            /* Style the carousel caption title (h5 element) with white text,
+               shadow, semi-transparent black background, padding, and rounded corners */
+            .carousel-caption h5 {
+                color: white;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .carousel-item img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            /* Set a border around the table, table headers, and table data cells */
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+
+            /* Apply padding to the table header and data cells, and left-align the text */
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+
+            /* Assign the margin-bottom of the form to 20px */
+            form {
+                margin-bottom: 20px;
+            }
+
+            /* Sets the margin for these */
+            input, select, button {
+                margin: 5px;
+            }
+
+    body
+        .content-wrapper
+            .container
+                ul.error
+                    //Uses the header from the header.pug file as it uses "includes"
+                include header
+                .row
+                    .col-md-6
+                        form.d-flex.flex-column(action="/weather", method="post", novalidate, class="needs-validation", id="weatherForm")
+                            // Input field for the city
+                            .mb-3
+                                label(for="city-input", class="form-label") Enter City
+                                input#city-input(type="text", name="city", placeholder="Enter city name", class="form-control", required)
+                                // Feedback message for invalid city input
+                                div.invalid-feedback Please enter a name
+
+                            // Input field for the country
+                            .mb-3
+                                label(for="country-input", class="form-label") Enter Country (Optional)
+                                input#country-input(type="text", name="country", placeholder="Enter country name", class="form-control")
+                                // Feedback message for invalid country input
+                                .invalid-feedback Country name must contain only letters.
+
+                            // Input field for the unit selection. By default it has "select temperature unit"
+                            .mb-3
+                                label(for="unit-select", class="form-label") Temperature Unit
+                                select#unit-select(name="unit", class="form-select", required)
+                                    option(value="" disabled selected) Select temperature unit
+                                    option(value="metric") Celsius (°C)
+                                    option(value="imperial") Fahrenheit (°F)
+                            // Placeholder for dynamic error message related to the unit selection
+                            div.invalid-feedback
+
+                            button(type="submit", class="btn btn-primary") Search
+
+                    .col-md-6
+                        // Weather Carousel
+                        #cityCarousel.carousel.slide(data-bs-ride="carousel")
+                            .carousel-inner
+                                // Item apart of the carousel that displays the weather image and has the caption of weathers in the world.
+                                    // Sets the item as active (first)
+                                .carousel-item.active
+                                    img(src="/image/weather_image.png", alt="Weather Image", class="d-block w-100")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 Weathers In The World
+
+                                // Carousel items displaying different city images with captions of where the city resides.
+                                .carousel-item
+                                    img(src="/image/london.png", class="d-block w-100", alt="London")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 London, United Kingdom
+                                .carousel-item
+                                    img(src="/image/tokyo.png", class="d-block w-100", alt="Tokyo")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 Tokyo, Japan
+                                .carousel-item
+                                    img(src="/image/paris.png", class="d-block w-100", alt="Paris")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 Paris, France
+                                .carousel-item
+                                    img(src="/image/new_york.png", class="d-block w-100", alt="New York")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 New York, USA
+                                .carousel-item
+                                    img(src="/image/sydney.png", class="d-block w-100", alt="Sydney")
+                                    .carousel-caption.d-none.d-md-block
+                                        h5 Sydney, Australia
+
+                            // Carousel controls for navigating to the previous, next items of the carousel.
+                            button.carousel-control-prev(type="button", data-bs-target="#cityCarousel", data-bs-slide="prev")
+                                span.carousel-control-prev-icon(aria-hidden="true")
+                                span.visually-hidden Previous
+
+                            button.carousel-control-next(type="button", data-bs-target="#cityCarousel", data-bs-slide="next")
+                                span.carousel-control-next-icon(aria-hidden="true")
+                                span.visually-hidden Next
+
+                // File Upload Form
+            .container.mt-5
+                h3 Upload Weather-Related Images
+                //Upon uploading it will post this and check if it meets the requirements in the /uploads route.
+                form(action="/uploads/uploadMulti" method="post" enctype="multipart/form-data")
+                    .mb-3
+                        //Notifies the user that the upload images max is 5.
+                        label(for="image-upload", class="form-label") Upload Images (Max 5)
+                        input#image-upload(type="file", name="image", multiple, class="form-control")
+                    button(type="submit", class="btn btn-primary") Upload
+
+            .row.mt-4
+                .col-md-12.text-center
+                    a.btn.btn-primary(href="/weather/comments") Go to comments
+                .col-md-12.text-center
+                    a.btn.btn-secondary(href='http://localhost:5173/'
+                    class="mt-2")
+                        Back Back to WeatherDashboard Page
+            // Include the footer.pug
+            include footer
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
+
+    script.
+        // Custom form validation for Bootstrap
+        (function () {
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.forEach.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault(); // Prevent form submission if invalid
+                        event.stopPropagation(); // Stop event propagation
+                    }
+                form.classList.add('was-validated'); // Add validation class to the form
+                }, false);
+            });
+        })();
